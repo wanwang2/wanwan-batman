@@ -1,0 +1,6 @@
+org\wanwanframework\javacompile\lexer\Number.class
+org\wanwanframework\javacompile\lexer\Tag.class
+org\wanwanframework\javacompile\Main.class
+org\wanwanframework\javacompile\lexer\Token.class
+org\wanwanframework\javacompile\lexer\Word.class
+org\wanwanframework\javacompile\lexer\Real.class
