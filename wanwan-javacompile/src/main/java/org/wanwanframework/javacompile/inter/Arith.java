@@ -26,7 +26,7 @@ public class Arith extends Op {
 
 	@Override
 	public String toString() {
-		return "Arith [expr1=" + expr1 + ", expr2=" + expr2 + "]";
+		return expr1.toString() + " " + op.toString() + " " + expr2.toString();
 	}
 	
 	

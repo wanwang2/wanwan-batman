@@ -30,8 +30,6 @@ import org.wanwanframework.javacompile.lexer.Word;
 import org.wanwanframework.javacompile.symbols.Array;
 import org.wanwanframework.javacompile.symbols.Env;
 
-import junit.framework.Assert;
-
 /**
  * 语法分析器
  * @author coco

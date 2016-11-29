@@ -24,7 +24,7 @@ public class Node {
 	public int newlabel(){return ++labels;}
 	
 	public void emitlabel(int i) {
-		System.out.println("L" + i + ":");
+		System.out.print("L" + i + ":");
 	}
 	
 	public void emit(String s) {

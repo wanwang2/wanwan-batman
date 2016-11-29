@@ -11,7 +11,7 @@ public class Word extends Token {
 
 	@Override
 	public String toString() {
-		return "Word [lexeme=" + lexeme + "]";
+		return lexeme;
 	}
 	
 	public static final Word and = new Word("&&", Tag.AND );

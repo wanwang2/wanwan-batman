@@ -15,7 +15,7 @@ public class Token {
 
 	@Override
 	public String toString() {
-		return "Token [tag=" + tag + "]";
+		return "" + (char)tag;
 	}
 
 }

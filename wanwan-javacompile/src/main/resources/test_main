@@ -6,3 +6,5 @@
 		if(i >= j) break;
 	}
 }
+
+{int i; i = 10; while(i < 10){i = i + 1;};}
