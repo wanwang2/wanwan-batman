@@ -41,7 +41,8 @@ public class Parser {
 	public int used; // 使用空间
 	
 	public Parser(Lexer l) throws IOException {
-		lex = l; moveToScan();
+		lex = l; 
+		moveToScan();
 	}
 	
 	/**

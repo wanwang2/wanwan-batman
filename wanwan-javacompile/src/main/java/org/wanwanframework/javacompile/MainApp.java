@@ -5,12 +5,12 @@ import java.io.IOException;
 import org.wanwanframework.javacompile.lexer.Lexer;
 import org.wanwanframework.javacompile.parser.Parser;
 
-public class Main {
+public class MainApp {
 
-	public Main() throws IOException {
+	public static void main(String[] args) throws IOException {
 		Lexer lex = new Lexer();
 		Parser parse = new Parser(lex);
 		parse.start();
-		System.out.write('\n');
+		System.out.println("end...");
 	}
 }
