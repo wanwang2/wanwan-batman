@@ -11,7 +11,7 @@ public class Constant extends Expr {
 	}
 
 	public Constant(int width) {
-		super(new org.wanwanframework.javacompile.lexer.Number(width), Type.INT);
+		super(new org.wanwanframework.javacompile.lexer.Num(width), Type.INT);
 	}
 
 	public static final Constant 

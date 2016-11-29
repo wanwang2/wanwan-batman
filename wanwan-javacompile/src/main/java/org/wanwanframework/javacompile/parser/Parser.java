@@ -23,7 +23,8 @@ import org.wanwanframework.javacompile.inter.Stmt;
 import org.wanwanframework.javacompile.inter.Unary;
 import org.wanwanframework.javacompile.inter.While;
 import org.wanwanframework.javacompile.lexer.Lexer;
-import org.wanwanframework.javacompile.lexer.Number;
+import org.wanwanframework.javacompile.lexer.Num;
+import org.wanwanframework.javacompile.lexer.Tag;
 import org.wanwanframework.javacompile.lexer.Token;
 import org.wanwanframework.javacompile.lexer.Type;
 import org.wanwanframework.javacompile.lexer.Word;
@@ -98,10 +99,10 @@ public class Parser {
 	}
 	
 	public void decls() throws IOException {
-		while(look.tag == Token.TagKey.BASIC.ordinal()) {
+		while(look.tag == Tag.BASIC ) {
 			Type p = type(); 
 			Token tok = look; 
-			matchAndScan(Token.TagKey.ID.ordinal());
+			matchAndScan(Tag.ID );
 			matchAndScan(';');
 			Id id = new Id((Word) tok, p, used);
 			top.put(tok, id);
@@ -111,7 +112,7 @@ public class Parser {
 	
 	public Type type() throws IOException {
 		Type p = (Type)look;
-		matchAndScan(Token.TagKey.BASIC.ordinal());
+		matchAndScan(Tag.BASIC );
 		if(look.tag != '[') return p;
 		else return dims(p);
 	}
@@ -119,11 +120,11 @@ public class Parser {
 	public Type dims(Type p) throws IOException {
 		matchAndScan('[');
 		Token tok = look;
-		matchAndScan(Token.TagKey.NUM.ordinal());
+		matchAndScan(Tag.NUM );
 		matchAndScan(']');
 		if(look.tag == '[')
 			p = dims(p);
-		return new Array(((Number)tok).value, p);
+		return new Array(((Num)tok).value, p);
 	}
 	
 	public Stmt stmts() throws IOException {
@@ -140,23 +141,23 @@ public class Parser {
 		if(look.tag == ';') {
 			moveToScan();
 			return Stmt.Null;
-		} else if(look.tag == Token.TagKey.IF.ordinal()) {
-			matchAndScan(Token.TagKey.IF.ordinal());
+		} else if(look.tag == Tag.IF ) {
+			matchAndScan(Tag.IF );
 			matchAndScan('(');
 			x = bool();
 			matchAndScan(')');
 			s1 = stmt();
-			if(look.tag != Token.TagKey.ELSE.ordinal()) {
+			if(look.tag != Tag.ELSE ) {
 				return new If(x, s1);
 			}
-			matchAndScan(Token.TagKey.ELSE.ordinal());
+			matchAndScan(Tag.ELSE );
 			s2 = stmt();
 			return new Else(x, s1, s2);
-		} else if(look.tag == Token.TagKey.WHILE.ordinal()) {
+		} else if(look.tag == Tag.WHILE ) {
 			While whilenode = new While();
 			savedStmt = Stmt.Enclosing;
 			Stmt.Enclosing = whilenode;
-			matchAndScan(Token.TagKey.WHILE.ordinal());
+			matchAndScan(Tag.WHILE );
 			matchAndScan('(');
 			x = bool();
 			matchAndScan(')');
@@ -164,21 +165,21 @@ public class Parser {
 			whilenode.init(x, s1);
 			Stmt.Enclosing = savedStmt;
 			return whilenode;
-		} else if(look.tag == Token.TagKey.DO.ordinal()) {
+		} else if(look.tag == Tag.DO ) {
 			Do donode = new Do();
 			savedStmt = Stmt.Enclosing;
 			Stmt.Enclosing = donode;
-			matchAndScan(Token.TagKey.DO.ordinal());
+			matchAndScan(Tag.DO );
 			s1 = stmt();
-			matchAndScan(Token.TagKey.WHILE.ordinal());
+			matchAndScan(Tag.WHILE );
 			x = bool();
 			matchAndScan(')');
 			matchAndScan(';');
 			donode.init(s1, x);
 			Stmt.Enclosing = savedStmt;
 			return donode;
-		} else if(look.tag == Token.TagKey.BREAK.ordinal()) {
-			matchAndScan(Token.TagKey.BREAK.ordinal());
+		} else if(look.tag == Tag.BREAK ) {
+			matchAndScan(Tag.BREAK );
 			matchAndScan(';');
 			return new Break();
 		} else if(look.tag == '{') {
@@ -195,7 +196,7 @@ public class Parser {
 	public Stmt assign() throws IOException {
 		Stmt stmt;
 		Token t = look;
-		matchAndScan(Token.TagKey.ID.ordinal());
+		matchAndScan(Tag.ID );
 		Id id = top.get(t);
 		if(id == null) error(t.toString() + " undeclared");
 		if(look.tag == '=') {
@@ -212,7 +213,7 @@ public class Parser {
 	
 	Expr bool() throws IOException {
 		Expr x = join();
-		while(look.tag == Token.TagKey.OR.ordinal()) {
+		while(look.tag == Tag.OR ) {
 			Token tok = look;
 			moveToScan();
 			x = new Or(tok, x, join());
@@ -222,7 +223,7 @@ public class Parser {
 	
 	Expr join() throws IOException {
 		Expr x = equality();
-		while(look.tag == Token.TagKey.AND.ordinal()) {
+		while(look.tag == Tag.AND ) {
 			Token tok = look;
 			moveToScan();
 			x = new And(tok, x, equality());
@@ -232,7 +233,7 @@ public class Parser {
 	
 	Expr equality() throws IOException {
 		Expr x = equality();
-		while(look.tag == Token.TagKey.EQ.ordinal()) {
+		while(look.tag == Tag.EQ ) {
 			Token tok = look;
 			moveToScan();
 			x = new Rel(tok, x, rel());
@@ -243,8 +244,8 @@ public class Parser {
 	Expr rel() throws IOException {
 		Expr x = expr();
 		if(look.tag == '<' ||
-				look.tag == Token.TagKey.LE.ordinal() ||
-				look.tag == Token.TagKey.GE.ordinal() ||
+				look.tag == Tag.LE  ||
+				look.tag == Tag.GE  ||
 				look.tag == '>') {
 			Token tok = look;
 			moveToScan();
@@ -298,23 +299,23 @@ public class Parser {
 			x = bool();
 			matchAndScan(')');
 			return x;
-		} else if (look.tag == Token.TagKey.NUM.ordinal()) {
+		} else if (look.tag == Tag.NUM ) {
 			x = new Constant(look, Type.INT);
 			moveToScan();
 			return x;
-		} else if (look.tag == Token.TagKey.REAL.ordinal()) {
+		} else if (look.tag == Tag.REAL ) {
 			x = new Constant(look, Type.FLOAT);
 			moveToScan();
 			return x;
-		} else if (look.tag == Token.TagKey.TRUE.ordinal()) {
+		} else if (look.tag == Tag.TRUE ) {
 			x = Constant.True;
 			moveToScan();
 			return x;
-		} else if (look.tag == Token.TagKey.FALSE.ordinal()) {
+		} else if (look.tag == Tag.FALSE ) {
 			x = Constant.False;
 			moveToScan();
 			return x;
-		} else if (look.tag == Token.TagKey.ID.ordinal()) {
+		} else if (look.tag == Tag.ID ) {
 			//String s = look.toString();
 			Id id = top.get(look);
 			if (id == null)

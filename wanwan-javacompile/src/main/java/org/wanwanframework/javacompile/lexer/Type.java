@@ -1,19 +1,23 @@
 package org.wanwanframework.javacompile.lexer;
 
+/**
+ * Type类型
+ * @author coco
+ *
+ */
 public class Type extends Word {
 
 	public int width = 0;
 	
-	public Type(String value, int tag, int width) {
-		super(value, tag);
+	public Type(String value, int t, int width) {
+		super(value, t);
 		this.width = width;
 	}
 
-	public static final Type INT = new Type("int", TagKey.INT.ordinal(), 4);
-	public static final Type FLOAT = new Type("int", TagKey.FLOAT.ordinal(), 8);
-	
-	public static final Type BOOL = new Type("bool", TagKey.BOOL.ordinal(), 1);
-	public static final Type CHAR = new Type("char", TagKey.CHAR.ordinal(), 1);
+	public static final Type INT = new Type("int", Tag.BASIC , 4);
+	public static final Type FLOAT = new Type("float", Tag.BASIC , 8);
+	public static final Type BOOL = new Type("bool", Tag.BASIC , 1);
+	public static final Type CHAR = new Type("char", Tag.BASIC , 1);
 	
 	public static boolean numberic(Type p) {
 		if(p == Type.CHAR || p == Type.INT || p == Type.FLOAT) {

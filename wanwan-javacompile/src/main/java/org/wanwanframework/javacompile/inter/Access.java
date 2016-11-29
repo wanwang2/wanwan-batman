@@ -1,6 +1,6 @@
 package org.wanwanframework.javacompile.inter;
 
-import org.wanwanframework.javacompile.lexer.Token;
+import org.wanwanframework.javacompile.lexer.Tag;
 import org.wanwanframework.javacompile.lexer.Type;
 import org.wanwanframework.javacompile.lexer.Word;
 
@@ -15,7 +15,7 @@ public class Access extends Op {
 	public Expr index;
 	
 	public Access(Id a, Expr i, Type p) {
-		super(new Word("[]", Token.TagKey.INDEX.ordinal()), p);
+		super(new Word("[]", Tag.INDEX), p);
 		array = a;
 		index = i;
 	}

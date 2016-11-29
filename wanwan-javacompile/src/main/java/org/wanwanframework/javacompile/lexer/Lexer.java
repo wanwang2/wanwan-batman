@@ -12,11 +12,11 @@ public class Lexer {
 	}
 	
 	public Lexer() {
-		reverse(new Word("if", Token.TagKey.IF.ordinal()));
-		reverse(new Word("else", Token.TagKey.ELSE.ordinal()));
-		reverse(new Word("while", Token.TagKey.WHILE.ordinal()));
-		reverse(new Word("do", Token.TagKey.DO.ordinal()));
-		reverse(new Word("break", Token.TagKey.BREAK.ordinal()));
+		reverse(new Word("if", Tag.IF ));
+		reverse(new Word("else", Tag.ELSE ));
+		reverse(new Word("while", Tag.WHILE ));
+		reverse(new Word("do", Tag.DO ));
+		reverse(new Word("break", Tag.BREAK ));
 		
 		reverse(Word.TRUE);
 		reverse(Word.FALSE);
@@ -85,7 +85,7 @@ public class Lexer {
 			do {
 				v = 10 * v + Character.digit(peek, 10);readch();
 			} while(Character.isDigit(peek));
-			if(peek != '.') return new Number(v);
+			if(peek != '.') return new Num(v);
 			float x = v; float d = 10;
 			for(;;) {
 				readch();
@@ -104,7 +104,7 @@ public class Lexer {
 			String s = b.toString();
 			Word w = (Word) words.get(s);
 			if(w != null) return w;
-			w = new Word(s, Token.TagKey.ID.ordinal());
+			w = new Word(s, Tag.ID );
 			words.put(s, w);
 			return w;
 		}

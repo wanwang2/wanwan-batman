@@ -14,16 +14,16 @@ public class Word extends Token {
 		return "Word [lexeme=" + lexeme + "]";
 	}
 	
-	public static final Word and = new Word("&&", TagKey.AND.ordinal());
-	public static final Word or = new Word("||", TagKey.OR.ordinal());
-	public static final Word eq = new Word("==", TagKey.EQ.ordinal());
-	public static final Word ne = new Word("!=", TagKey.NE.ordinal());
+	public static final Word and = new Word("&&", Tag.AND );
+	public static final Word or = new Word("||", Tag.OR );
+	public static final Word eq = new Word("==", Tag.EQ );
+	public static final Word ne = new Word("!=", Tag.NE );
 	
-	public static final Word le = new Word("<=", TagKey.LE.ordinal());
-	public static final Word ge = new Word(">=", TagKey.GE.ordinal());
-	public static final Word minus = new Word("minus", TagKey.MINUS.ordinal());
+	public static final Word le = new Word("<=", Tag.LE );
+	public static final Word ge = new Word(">=", Tag.GE );
+	public static final Word minus = new Word("minus", Tag.MINUS );
 	
-	public static final Word TRUE = new Word("true", TagKey.TRUE.ordinal());
-	public static final Word FALSE = new Word("false", TagKey.FALSE.ordinal());
-	public static final Word temp = new Word("t", TagKey.TEMP.ordinal());
+	public static final Word TRUE = new Word("true", Tag.TRUE );
+	public static final Word FALSE = new Word("false", Tag.FALSE );
+	public static final Word temp = new Word("t", Tag.TEMP );
 }

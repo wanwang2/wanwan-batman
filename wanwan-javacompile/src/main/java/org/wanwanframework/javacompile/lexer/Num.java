@@ -1,9 +1,14 @@
 package org.wanwanframework.javacompile.lexer;
 
-public class Number extends Token {
+/**
+ * Num
+ * @author coco
+ *
+ */
+public class Num extends Token {
 
-	public Number(int v) {
-		super(Token.TagKey.NUM.ordinal());
+	public Num(int v) {
+		super(Tag.NUM);
 		value = v;
 	}
 

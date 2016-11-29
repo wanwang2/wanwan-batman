@@ -5,7 +5,7 @@ public class Real extends Token {
 	public float value;
 	
 	public Real(float v) {
-		super(Token.TagKey.REAL.ordinal());
+		super(Tag.REAL);
 		this.value = v;
 	}
 
