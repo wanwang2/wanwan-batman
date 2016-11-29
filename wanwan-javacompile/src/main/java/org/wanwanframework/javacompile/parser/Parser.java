@@ -5,7 +5,6 @@ import java.io.IOException;
 import org.wanwanframework.javacompile.inter.Access;
 import org.wanwanframework.javacompile.inter.And;
 import org.wanwanframework.javacompile.inter.Arith;
-import org.wanwanframework.javacompile.inter.Array;
 import org.wanwanframework.javacompile.inter.Break;
 import org.wanwanframework.javacompile.inter.Constant;
 import org.wanwanframework.javacompile.inter.Do;
@@ -28,6 +27,7 @@ import org.wanwanframework.javacompile.lexer.Tag;
 import org.wanwanframework.javacompile.lexer.Token;
 import org.wanwanframework.javacompile.lexer.Type;
 import org.wanwanframework.javacompile.lexer.Word;
+import org.wanwanframework.javacompile.symbols.Array;
 import org.wanwanframework.javacompile.symbols.Env;
 
 /**

@@ -2,6 +2,7 @@ package org.wanwanframework.javacompile.inter;
 
 import org.wanwanframework.javacompile.lexer.Token;
 import org.wanwanframework.javacompile.lexer.Type;
+import org.wanwanframework.javacompile.symbols.Array;
 
 /**
  * 关系运算符：complite

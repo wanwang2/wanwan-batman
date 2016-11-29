@@ -1,6 +1,7 @@
 package org.wanwanframework.javacompile.inter;
 
 import org.wanwanframework.javacompile.lexer.Type;
+import org.wanwanframework.javacompile.symbols.Array;
 
 public class SetElem extends Stmt {
 

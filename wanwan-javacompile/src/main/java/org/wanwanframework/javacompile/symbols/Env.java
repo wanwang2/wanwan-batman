@@ -6,7 +6,7 @@ import org.wanwanframework.javacompile.inter.Id;
 import org.wanwanframework.javacompile.lexer.Token;
 
 /**
- * 符号表
+ * 符号表:complite
  * @author coco
  *
  */
