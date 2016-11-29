@@ -1,5 +1,7 @@
-package org.wanwanframework.javacompile.inter;
+package org.wanwanframework.javacompile.logicals;
 
+import org.wanwanframework.javacompile.expresses.Express;
+import org.wanwanframework.javacompile.expresses.Logical;
 import org.wanwanframework.javacompile.lexer.Token;
 
 /**

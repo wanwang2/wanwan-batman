@@ -1,5 +1,7 @@
-package org.wanwanframework.javacompile.inter;
+package org.wanwanframework.javacompile.stmts;
 
+import org.wanwanframework.javacompile.expresses.Express;
+import org.wanwanframework.javacompile.expresses.Id;
 import org.wanwanframework.javacompile.lexer.Type;
 
 /**

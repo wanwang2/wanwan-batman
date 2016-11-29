@@ -2,8 +2,8 @@ package org.wanwanframework.javacompile;
 
 import java.io.IOException;
 
+import org.wanwanframework.javacompile.core.Parser;
 import org.wanwanframework.javacompile.lexer.Lexer;
-import org.wanwanframework.javacompile.parser.Parser;
 
 public class MainApp {
 

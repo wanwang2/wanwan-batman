@@ -1,4 +1,4 @@
-package org.wanwanframework.javacompile.inter;
+package org.wanwanframework.javacompile.stmts;
 
 public class Break extends Stmt {
 

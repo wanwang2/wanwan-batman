@@ -2,7 +2,7 @@ package org.wanwanframework.javacompile.symbols;
 
 import java.util.Hashtable;
 
-import org.wanwanframework.javacompile.inter.Id;
+import org.wanwanframework.javacompile.expresses.Id;
 import org.wanwanframework.javacompile.lexer.Token;
 
 /**

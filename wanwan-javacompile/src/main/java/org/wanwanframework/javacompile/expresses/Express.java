@@ -1,5 +1,6 @@
-package org.wanwanframework.javacompile.inter;
+package org.wanwanframework.javacompile.expresses;
 
+import org.wanwanframework.javacompile.core.Node;
 import org.wanwanframework.javacompile.lexer.Token;
 import org.wanwanframework.javacompile.lexer.Type;
 
@@ -12,7 +13,7 @@ public class Express extends Node {
 
 	public Token op;
 	public Type type;
-	Express(Token tok, Type p) {
+	public Express(Token tok, Type p) {
 		op = tok;
 		type = p;
 	}

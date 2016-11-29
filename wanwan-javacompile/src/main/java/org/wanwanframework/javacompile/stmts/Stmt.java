@@ -1,4 +1,6 @@
-package org.wanwanframework.javacompile.inter;
+package org.wanwanframework.javacompile.stmts;
+
+import org.wanwanframework.javacompile.core.Node;
 
 /**
  * 语句构造：complite
@@ -22,7 +24,7 @@ public class Stmt extends Node {
 		
 	}
 	
-	int after = 0; // the mark to save next language
+	public int after = 0; // the mark to save next language
 	
 	public static Stmt Enclosing = Stmt.Null; // for break
 }

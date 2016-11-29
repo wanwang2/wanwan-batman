@@ -1,4 +1,4 @@
-package org.wanwanframework.javacompile.inter;
+package org.wanwanframework.javacompile.expresses;
 
 import org.wanwanframework.javacompile.lexer.Token;
 import org.wanwanframework.javacompile.lexer.Type;
@@ -7,7 +7,7 @@ public class Logical extends Express {
 
 	public Express expr1, expr2;
 	
-	Logical(Token tok, Express x1, Express x2) {
+	public Logical(Token tok, Express x1, Express x2) {
 		super(tok, null);
 		expr1 = x1; 
 		expr2 = x2;

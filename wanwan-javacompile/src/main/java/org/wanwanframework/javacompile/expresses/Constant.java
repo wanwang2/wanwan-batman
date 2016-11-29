@@ -1,4 +1,4 @@
-package org.wanwanframework.javacompile.inter;
+package org.wanwanframework.javacompile.expresses;
 
 import org.wanwanframework.javacompile.lexer.Num;
 import org.wanwanframework.javacompile.lexer.Token;

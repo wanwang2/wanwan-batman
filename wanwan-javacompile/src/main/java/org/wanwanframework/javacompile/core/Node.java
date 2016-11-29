@@ -1,4 +1,4 @@
-package org.wanwanframework.javacompile.inter;
+package org.wanwanframework.javacompile.core;
 
 import org.wanwanframework.javacompile.lexer.Lexer;
 
@@ -11,7 +11,7 @@ public class Node {
 
 	int lexline = 0;
 	
-	Node() { 
+	public Node() { 
 		lexline = Lexer.line;
 	}
 	
