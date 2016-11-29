@@ -1,4 +1,19 @@
 Readme
 
-1£¬ÕâÊÇÒ»¸öÑĞ¾¿ÏîÄ¿
-2£¬Ô´ÂëÀ´×Ô±àÒëÔ­ÀíµÚ¶ş°æ
+ä¸€, æµ‹è¯•æ•°æ®ï¼šåœ¨æ§åˆ¶å°è¾“å…¥{}å¹¶é‡Œé¢çš„å†…å®¹ï¼Œç‚¹å‡»å›è½¦
+1,test program
+{
+	int i = 0; int j = 40;
+	while(true) {
+		do i = i+1; while(a[i] < 20);
+		do j = j-1; while(a[j] > 20);
+		if(i >= j) break;
+	}
+}
+
+2,test while
+{int i; i = 10; while(i < 20){i = i + 1;};}
+
+3,test if
+	3.1{int i; i = 10; if(i < 20){i = 5;};}
+	3.2{int i; i = 10; if(i < 20){i = 5;};}
