@@ -32,10 +32,10 @@ public class Lexer {
 	
 	public boolean readch(char c) throws IOException {
 		readch();
-		if(peek != c) {
+		if(peek != c) { // 将peek缓存起来
 			return false;
 		}
-		peek = ' ';
+		peek = ' '; // 默认取到了peek eq c 的字符，然后清除缓存
 		return true;
 	}
 	

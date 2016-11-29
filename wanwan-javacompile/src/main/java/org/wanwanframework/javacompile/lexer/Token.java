@@ -1,5 +1,10 @@
 package org.wanwanframework.javacompile.lexer;
 
+/**
+ * Token只包含一个词
+ * @author coco
+ *
+ */
 public class Token {
 
 	public enum TagKey {
@@ -10,7 +15,7 @@ public class Token {
 		INT, CHAR, FLOAT, BOOL;
 	};
 
-	int tag;
+	public int tag;
 
 	public Token(int tag) {
 		this.tag = tag;
