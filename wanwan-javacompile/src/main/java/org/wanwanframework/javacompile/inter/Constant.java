@@ -1,5 +1,6 @@
 package org.wanwanframework.javacompile.inter;
 
+import org.wanwanframework.javacompile.lexer.Num;
 import org.wanwanframework.javacompile.lexer.Token;
 import org.wanwanframework.javacompile.lexer.Type;
 import org.wanwanframework.javacompile.lexer.Word;
@@ -11,7 +12,7 @@ public class Constant extends Expr {
 	}
 
 	public Constant(int width) {
-		super(new org.wanwanframework.javacompile.lexer.Num(width), Type.INT);
+		super(new Num(width), Type.INT);
 	}
 
 	public static final Constant 
