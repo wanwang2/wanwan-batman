@@ -8,7 +8,7 @@ import org.wanwanframework.javacompile.lexer.Word;
  * @author coco
  *
  */
-public class Temp extends Expr {
+public class Temp extends Express {
 	public static int count = 0;
 	int number = 0;
 	Temp(Type p) {

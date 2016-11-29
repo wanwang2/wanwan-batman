@@ -9,7 +9,7 @@ import org.wanwanframework.javacompile.lexer.Token;
  */
 public class Or extends Logical{
 
-	public Or(Token tok, Expr x1, Expr x2) {
+	public Or(Token tok, Express x1, Express x2) {
 		super(tok, x1, x2);
 	}
 

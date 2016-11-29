@@ -2,11 +2,16 @@ package org.wanwanframework.javacompile.inter;
 
 import org.wanwanframework.javacompile.lexer.Type;
 
+/**
+ * while:complite
+ * @author coco
+ *
+ */
 public class While extends Stmt {
 
-	Expr expr; Stmt stmt;
+	Express expr; Stmt stmt;
 	public While() { expr = null; stmt = null; }
-	public void init(Expr x, Stmt s) {
+	public void init(Express x, Stmt s) {
 		expr = x;
 		stmt = s;
 		if(expr.type != Type.BOOL)

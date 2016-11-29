@@ -1,3 +1,4 @@
+1,test program
 {
 	int i = 0; int j = 40;
 	while(true) {
@@ -7,4 +8,5 @@
 	}
 }
 
-{int i; i = 10; while(i < 10){i = i + 1;};}
+2,test while
+{int i; i = 10; while(i < 20){i = i + 1;};}

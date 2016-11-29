@@ -10,15 +10,15 @@ import org.wanwanframework.javacompile.lexer.Type;
  */
 public class Unary extends Op {
 
-	public Expr expr;
-	public Unary(Token tok, Expr x) {
+	public Express expr;
+	public Unary(Token tok, Express x) {
 		super(tok, null);
 		this.expr = x;
 		type = Type.max(Type.INT, expr.type);
 		if(type == null) error("type error");
 	}
 	
-	public Expr gen() {
+	public Express gen() {
 		return new Unary(op, expr.reduce());
 	}
 	

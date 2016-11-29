@@ -11,6 +11,7 @@ public class MainApp {
 		Lexer lex = new Lexer();
 		Parser parse = new Parser(lex);
 		parse.start();
+		System.out.println();
 		System.out.println("end...");
 	}
 }

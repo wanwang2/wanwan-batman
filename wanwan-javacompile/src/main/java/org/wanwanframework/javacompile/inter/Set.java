@@ -10,8 +10,8 @@ import org.wanwanframework.javacompile.lexer.Type;
 public class Set extends Stmt {
 
 	public Id id; 
-	public Expr expr;
-	public Set(Id i, Expr x) {
+	public Express expr;
+	public Set(Id i, Express x) {
 		this.id = i;
 		this.expr = x;
 		if(check(id.type, expr.type) == null) {

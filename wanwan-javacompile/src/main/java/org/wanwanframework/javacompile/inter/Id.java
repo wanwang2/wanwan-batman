@@ -3,7 +3,7 @@ package org.wanwanframework.javacompile.inter;
 import org.wanwanframework.javacompile.lexer.Type;
 import org.wanwanframework.javacompile.lexer.Word;
 
-public class Id extends Expr {
+public class Id extends Express {
 
 	public int offset;
 	

@@ -5,7 +5,7 @@ import org.wanwanframework.javacompile.lexer.Token;
 import org.wanwanframework.javacompile.lexer.Type;
 import org.wanwanframework.javacompile.lexer.Word;
 
-public class Constant extends Expr {
+public class Constant extends Express {
 
 	public Constant(Token tok, Type p) {
 		super(tok, p);

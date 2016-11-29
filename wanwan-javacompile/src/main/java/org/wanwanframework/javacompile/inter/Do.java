@@ -4,14 +4,14 @@ import org.wanwanframework.javacompile.lexer.Type;
 
 public class Do extends Stmt {
 
-	Expr expr;
+	Express expr;
 	Stmt stmt;
 	public Do() {
 		this.expr = null;
 		this.stmt = null;
 	}
 	
-	public void init(Stmt s, Expr x) {
+	public void init(Stmt s, Express x) {
 		expr = x; stmt = s;
 		if(expr.type != Type.BOOL){
 			expr.error("boolean required in do");

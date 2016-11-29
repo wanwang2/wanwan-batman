@@ -12,15 +12,15 @@ import org.wanwanframework.javacompile.lexer.Word;
 public class Access extends Op {
 
 	public Id array;
-	public Expr index;
+	public Express index;
 	
-	public Access(Id a, Expr i, Type p) {
+	public Access(Id a, Express i, Type p) {
 		super(new Word("[]", Tag.INDEX), p);
 		array = a;
 		index = i;
 	}
 
-	public Expr gen() {
+	public Express gen() {
 		return new Access(array, index.reduce(), type);
 	}
 	

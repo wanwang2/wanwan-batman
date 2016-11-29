@@ -9,7 +9,7 @@ import org.wanwanframework.javacompile.inter.Break;
 import org.wanwanframework.javacompile.inter.Constant;
 import org.wanwanframework.javacompile.inter.Do;
 import org.wanwanframework.javacompile.inter.Else;
-import org.wanwanframework.javacompile.inter.Expr;
+import org.wanwanframework.javacompile.inter.Express;
 import org.wanwanframework.javacompile.inter.Id;
 import org.wanwanframework.javacompile.inter.If;
 import org.wanwanframework.javacompile.inter.Not;
@@ -137,7 +137,7 @@ public class Parser {
 	}
 	
 	public Stmt stmt() throws IOException {
-		Expr x; Stmt s1, s2;
+		Express x; Stmt s1, s2;
 		Stmt savedStmt;
 		if(look.tag == ';') {
 			moveToScan();
@@ -218,8 +218,8 @@ public class Parser {
 		return stmt;
 	}
 	
-	Expr bool() throws IOException {
-		Expr x = join();
+	Express bool() throws IOException {
+		Express x = join();
 		while(look.tag == Tag.OR ) {
 			Token tok = look;
 			moveToScan();
@@ -228,8 +228,8 @@ public class Parser {
 		return x;
 	}
 	
-	Expr join() throws IOException {
-		Expr x = equality();
+	Express join() throws IOException {
+		Express x = equality();
 		while(look.tag == Tag.AND ) {
 			Token tok = look;
 			moveToScan();
@@ -238,8 +238,8 @@ public class Parser {
 		return x;
 	}
 	
-	Expr equality() throws IOException {
-		Expr x = rel();
+	Express equality() throws IOException {
+		Express x = rel();
 		while(look.tag == Tag.EQ || look.tag == Tag.NE) {
 			Token tok = look;
 			moveToScan();
@@ -248,8 +248,8 @@ public class Parser {
 		return x;
 	}
 	
-	Expr rel() throws IOException {
-		Expr x = expr();
+	Express rel() throws IOException {
+		Express x = expr();
 		if(look.tag == '<' ||
 				look.tag == Tag.LE  ||
 				look.tag == Tag.GE  ||
@@ -261,8 +261,8 @@ public class Parser {
 		return x;
 	}
 	
-	Expr expr() throws IOException {
-		Expr x = term();
+	Express expr() throws IOException {
+		Express x = term();
 		while(look.tag == '+' || look.tag == '-') {
 			Token tok = look; 
 			moveToScan(); 
@@ -271,8 +271,8 @@ public class Parser {
 		return x;
 	}
 	
-	Expr term() throws IOException {
-		Expr x = unary();
+	Express term() throws IOException {
+		Express x = unary();
 		while(look.tag == '*' || look.tag == '/') {
 			Token tok = look;
 			moveToScan();
@@ -281,7 +281,7 @@ public class Parser {
 		return x;
 	}
 	
-	Expr unary() throws IOException {
+	Express unary() throws IOException {
 		if(look.tag == '-') {
 			moveToScan();
 			return new Unary(Word.minus, unary());
@@ -299,8 +299,8 @@ public class Parser {
 	 * @return
 	 * @throws IOException
 	 */
-	public Expr factor() throws IOException {
-		Expr x = null;
+	public Express factor() throws IOException {
+		Express x = null;
 		if (look.tag == '(') {
 			moveToScan();
 			x = bool();
@@ -344,7 +344,7 @@ public class Parser {
 			return null;
 		}
 		
-		Expr i; Expr w; Expr t1, t2; Expr loc;
+		Express i; Express w; Express t1, t2; Express loc;
 		Type type = a.type;
 		matchAndScan('[');
 		i = bool(); 

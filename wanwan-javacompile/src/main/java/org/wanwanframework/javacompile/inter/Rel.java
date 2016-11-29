@@ -11,7 +11,7 @@ import org.wanwanframework.javacompile.symbols.Array;
  */
 public class Rel extends Logical{
 
-	public Rel(Token tok, Expr x1, Expr x2) {
+	public Rel(Token tok, Express x1, Express x2) {
 		super(tok, x1, x2);
 	}
 
@@ -25,8 +25,8 @@ public class Rel extends Logical{
 	}
 	
 	public void jumping(int t, int f) {
-		Expr a = expr1.reduce();
-		Expr b = expr2.reduce();
+		Express a = expr1.reduce();
+		Express b = expr2.reduce();
 		String test = a.toString() + "" + op.toString()
 		+ "" + b.toString();
 		emitjumps(test, t, f);

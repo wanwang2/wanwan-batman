@@ -10,9 +10,9 @@ import org.wanwanframework.javacompile.lexer.Type;
  */
 public class Arith extends Op {
 
-	public Expr expr1, expr2;
+	public Express expr1, expr2;
 	
-	public Arith(Token token, Expr i, Expr w) {
+	public Arith(Token token, Express i, Express w) {
 		super(token, null);
 		expr1 = i;
 		expr2 = w;
@@ -20,7 +20,7 @@ public class Arith extends Op {
 		if(type == null) error("type error");
 	}
 
-	public Expr gen() {
+	public Express gen() {
 		return new Arith(op, expr1.reduce(), expr2.reduce());
 	}
 

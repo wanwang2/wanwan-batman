@@ -9,7 +9,7 @@ import org.wanwanframework.javacompile.lexer.Token;
  */
 public class And extends Logical{
 
-	public And(Token tok, Expr x1, Expr x2) {
+	public And(Token tok, Express x1, Express x2) {
 		super(tok, x1, x2);
 	}
 	

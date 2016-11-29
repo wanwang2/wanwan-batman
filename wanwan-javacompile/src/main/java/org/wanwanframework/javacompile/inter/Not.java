@@ -9,7 +9,7 @@ import org.wanwanframework.javacompile.lexer.Token;
  */
 public class Not extends Logical{
 
-	public Not(Token tok, Expr x2) {
+	public Not(Token tok, Express x2) {
 		super(tok, x2, x2);
 	}
 

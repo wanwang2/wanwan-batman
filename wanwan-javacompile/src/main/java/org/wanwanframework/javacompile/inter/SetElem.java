@@ -6,10 +6,10 @@ import org.wanwanframework.javacompile.symbols.Array;
 public class SetElem extends Stmt {
 
 	public Id array;
-	public Expr index;
-	public Expr expr;
+	public Express index;
+	public Express expr;
 	
-	public SetElem(Access x, Expr y) {
+	public SetElem(Access x, Express y) {
 		array = x.array;
 		index = x.index;
 		expr = y;

@@ -3,11 +3,11 @@ package org.wanwanframework.javacompile.inter;
 import org.wanwanframework.javacompile.lexer.Token;
 import org.wanwanframework.javacompile.lexer.Type;
 
-public class Logical extends Expr {
+public class Logical extends Express {
 
-	public Expr expr1, expr2;
+	public Express expr1, expr2;
 	
-	Logical(Token tok, Expr x1, Expr x2) {
+	Logical(Token tok, Express x1, Express x2) {
 		super(tok, null);
 		expr1 = x1; 
 		expr2 = x2;
@@ -21,7 +21,7 @@ public class Logical extends Expr {
 		return null;
 	}
 
-	public Expr gen() {
+	public Express gen() {
 		int f = newlabel(); int a = newlabel();
 		Temp temp = new Temp(type);
 		this.jumping(0, f);
