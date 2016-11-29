@@ -1,5 +1,10 @@
 package org.wanwanframework.javacompile.inter;
 
+/**
+ * 语句构造：complite
+ * @author coco
+ *
+ */
 public class Stmt extends Node {
 
 	public Stmt() {

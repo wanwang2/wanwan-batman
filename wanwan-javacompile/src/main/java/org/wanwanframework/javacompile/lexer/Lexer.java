@@ -7,20 +7,22 @@ public class Lexer {
 
 	Hashtable<String, Word> words = new Hashtable<String, Word>();
 	
-	public void reverse(Word word) {
+	private void reverse(Word word) {
 		words.put(word.lexeme, word);
 	}
 	
 	public Lexer() {
-		reverse(new Word("if", Tag.IF ));
-		reverse(new Word("else", Tag.ELSE ));
-		reverse(new Word("while", Tag.WHILE ));
-		reverse(new Word("do", Tag.DO ));
-		reverse(new Word("break", Tag.BREAK ));
+		reverse(new Word("if", 		Tag.IF ));
+		reverse(new Word("else", 	Tag.ELSE ));
+		reverse(new Word("while", 	Tag.WHILE ));
+		reverse(new Word("do", 		Tag.DO ));
+		reverse(new Word("break", 	Tag.BREAK ));
 		
 		reverse(Word.TRUE);
 		reverse(Word.FALSE);
 		reverse(Type.INT);
+		reverse(Type.CHAR);
+		reverse(Type.BOOL);
 		reverse(Type.FLOAT);
 	}
 	
@@ -42,7 +44,7 @@ public class Lexer {
 	public static int line = 1;
 	
 	public Token scan() throws IOException {
-		for (;; readch()) {
+		for ( ; ; readch()) {
 			if(peek == ' ' || peek == '\t' ) continue;
 			else if(peek == '\n') line = line + 1;
 			else break;

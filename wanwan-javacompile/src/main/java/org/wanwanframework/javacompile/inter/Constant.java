@@ -16,8 +16,8 @@ public class Constant extends Expr {
 	}
 
 	public static final Constant 
-		True = new Constant(Word.TRUE, Type.BOOL),
-		False = new Constant(Word.FALSE, Type.BOOL);
+		True = new Constant(Word.TRUE, 		Type.BOOL),
+		False = new Constant(Word.FALSE, 	Type.BOOL);
 	
 	public void jumping(int t, int f) {
 		if(this == True && t != 0) emit("goto L" + t);

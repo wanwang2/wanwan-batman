@@ -2,6 +2,11 @@ package org.wanwanframework.javacompile.inter;
 
 import org.wanwanframework.javacompile.lexer.Type;
 
+/**
+ * If:complite
+ * @author coco
+ *
+ */
 public class If extends Stmt {
 
 	Expr expr; Stmt stmt;

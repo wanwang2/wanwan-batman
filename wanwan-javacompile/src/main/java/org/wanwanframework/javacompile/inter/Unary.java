@@ -3,6 +3,11 @@ package org.wanwanframework.javacompile.inter;
 import org.wanwanframework.javacompile.lexer.Token;
 import org.wanwanframework.javacompile.lexer.Type;
 
+/**
+ * 单目运算
+ * @author coco
+ *
+ */
 public class Unary extends Op {
 
 	public Expr expr;

@@ -3,7 +3,7 @@ package org.wanwanframework.javacompile.inter;
 import org.wanwanframework.javacompile.lexer.Token;
 
 /**
- * Not
+ * Not:complite
  * @author coco
  *
  */

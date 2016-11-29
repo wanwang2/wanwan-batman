@@ -3,11 +3,15 @@ package org.wanwanframework.javacompile.inter;
 import org.wanwanframework.javacompile.lexer.Token;
 import org.wanwanframework.javacompile.lexer.Type;
 
+/**
+ * 关系运算符：complite
+ * @author coco
+ *
+ */
 public class Rel extends Logical{
 
 	public Rel(Token tok, Expr x1, Expr x2) {
 		super(tok, x1, x2);
-		// TODO Auto-generated constructor stub
 	}
 
 	public Type check(Type p1, Type p2) {
