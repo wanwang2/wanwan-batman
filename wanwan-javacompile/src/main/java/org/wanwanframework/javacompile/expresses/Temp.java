@@ -10,8 +10,9 @@ import org.wanwanframework.javacompile.lexer.Word;
  */
 public class Temp extends Express {
 	public static int count = 0;
-	int number = 0;
-	Temp(Type p) {
+	private int number = 0;
+	
+	public Temp(Type p) {
 		super(Word.temp, p);
 		number = ++count;
 	}

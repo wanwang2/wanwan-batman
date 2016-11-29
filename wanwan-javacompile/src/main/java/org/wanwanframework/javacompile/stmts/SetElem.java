@@ -1,9 +1,9 @@
 package org.wanwanframework.javacompile.stmts;
 
-import org.wanwanframework.javacompile.expresses.Access;
 import org.wanwanframework.javacompile.expresses.Express;
 import org.wanwanframework.javacompile.expresses.Id;
 import org.wanwanframework.javacompile.lexer.Type;
+import org.wanwanframework.javacompile.ops.Access;
 import org.wanwanframework.javacompile.symbols.Array;
 
 public class SetElem extends Stmt {
