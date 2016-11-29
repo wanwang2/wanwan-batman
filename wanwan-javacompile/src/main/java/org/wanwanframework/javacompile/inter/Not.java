@@ -2,6 +2,11 @@ package org.wanwanframework.javacompile.inter;
 
 import org.wanwanframework.javacompile.lexer.Token;
 
+/**
+ * Not
+ * @author coco
+ *
+ */
 public class Not extends Logical{
 
 	public Not(Token tok, Expr x2) {

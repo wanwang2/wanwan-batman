@@ -8,6 +8,7 @@ import org.wanwanframework.javacompile.inter.Arith;
 import org.wanwanframework.javacompile.inter.Array;
 import org.wanwanframework.javacompile.inter.Break;
 import org.wanwanframework.javacompile.inter.Constant;
+import org.wanwanframework.javacompile.inter.Do;
 import org.wanwanframework.javacompile.inter.Else;
 import org.wanwanframework.javacompile.inter.Expr;
 import org.wanwanframework.javacompile.inter.Id;
@@ -134,7 +135,7 @@ public class Parser {
 	}
 	
 	public Stmt stmt() throws IOException {
-		Expr x; Stmt s, s1, s2;
+		Expr x; Stmt s1, s2;
 		Stmt savedStmt;
 		if(look.tag == ';') {
 			moveToScan();
@@ -163,6 +164,19 @@ public class Parser {
 			whilenode.init(x, s1);
 			Stmt.Enclosing = savedStmt;
 			return whilenode;
+		} else if(look.tag == Token.TagKey.DO.ordinal()) {
+			Do donode = new Do();
+			savedStmt = Stmt.Enclosing;
+			Stmt.Enclosing = donode;
+			matchAndScan(Token.TagKey.DO.ordinal());
+			s1 = stmt();
+			matchAndScan(Token.TagKey.WHILE.ordinal());
+			x = bool();
+			matchAndScan(')');
+			matchAndScan(';');
+			donode.init(s1, x);
+			Stmt.Enclosing = savedStmt;
+			return donode;
 		} else if(look.tag == Token.TagKey.BREAK.ordinal()) {
 			matchAndScan(Token.TagKey.BREAK.ordinal());
 			matchAndScan(';');
