@@ -30,6 +30,8 @@ import org.wanwanframework.javacompile.lexer.Word;
 import org.wanwanframework.javacompile.symbols.Array;
 import org.wanwanframework.javacompile.symbols.Env;
 
+import junit.framework.Assert;
+
 /**
  * 语法分析器
  * @author coco
@@ -195,18 +197,24 @@ public class Parser {
 	 * @throws IOException
 	 */
 	public Stmt assign() throws IOException {
-		Stmt stmt;
+		Stmt stmt = null;
 		Token t = look;
 		matchAndScan(Tag.ID );
 		Id id = top.get(t);
-		if(id == null) error(t.toString() + " undeclared");
-		if(look.tag == '=') {
+		if(id == null) {
+			error(t.toString() + " undeclared");
+		} else if(look.tag == '=') {
 			moveToScan();
 			stmt = new Set(id, bool());
 		} else {
-			Access x = offset(id);
-			matchAndScan('=');
-			stmt = new SetElem(x, bool());
+			System.out.println("look.tag:" + look.tag);
+			Access x = null;
+			if(id != null) {
+				x = offset(id);
+				matchAndScan('=');
+				stmt = new SetElem(x, bool());
+			}
+			
 		}
 		matchAndScan(';');
 		return stmt;
@@ -334,6 +342,10 @@ public class Parser {
 	}
 	
 	public Access offset(Id a) throws IOException {
+		if(a == null) {
+			return null;
+		}
+		
 		Expr i; Expr w; Expr t1, t2; Expr loc;
 		Type type = a.type;
 		matchAndScan('[');
