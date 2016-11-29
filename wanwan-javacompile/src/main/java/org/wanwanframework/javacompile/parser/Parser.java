@@ -40,7 +40,7 @@ public class Parser {
 	private Lexer lex;
 	private Token look;
 	Env top = null;
-	public int used; // 使用空间
+	int used = 0; // 使用空间
 	
 	public Parser(Lexer l) throws IOException {
 		lex = l; 
@@ -233,8 +233,8 @@ public class Parser {
 	}
 	
 	Expr equality() throws IOException {
-		Expr x = equality();
-		while(look.tag == Tag.EQ ) {
+		Expr x = rel();
+		while(look.tag == Tag.EQ || look.tag == Tag.NE) {
 			Token tok = look;
 			moveToScan();
 			x = new Rel(tok, x, rel());
