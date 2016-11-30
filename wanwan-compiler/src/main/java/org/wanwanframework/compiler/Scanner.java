@@ -7,6 +7,9 @@ public class Scanner {
 
 	Set<String> keyWords = new HashSet<String>();;
 	Set<String> symbols = new HashSet<String>();
+	private String lineContent;
+	private int lineIndex;
+	protected int row;
 
 	public void initKeyWords() {
 		keyWords.add("class");
@@ -58,4 +61,24 @@ public class Scanner {
 		// symbols.add("||");
 	}
 
+	private void getLine() {
+		
+	}
+	
+	@SuppressWarnings("unused")
+	private char nextChar()
+	{
+	    if (lineIndex >= lineContent.length())
+	    {
+	        row++;
+	        getLine();
+	        lineContent += '\n';
+	        lineIndex = 0;
+            return lineContent.charAt(lineIndex);
+	    }
+	    else
+	    {
+	        return lineContent.charAt(lineIndex);
+	    }
+	}
 }
