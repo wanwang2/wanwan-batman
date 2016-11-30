@@ -2,16 +2,16 @@ package org.wanwanframework.javacompile.lexer;
 
 public class Word extends Token {
 
-	String lexeme = "";
+	String value = "";
 	
 	public Word(String value, int tag) {
 		super(tag);
-		this.lexeme = value;
+		this.value = value;
 	}
 
 	@Override
 	public String toString() {
-		return lexeme;
+		return value;
 	}
 	
 	public static final Word and = new Word("&&", Tag.AND );

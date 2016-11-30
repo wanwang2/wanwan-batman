@@ -1,7 +1,7 @@
 package org.wanwanframework.javacompile.lexer;
 
 /**
- * Token只包含一个词
+ * Token——标记，只包含一个词
  * @author coco
  *
  */

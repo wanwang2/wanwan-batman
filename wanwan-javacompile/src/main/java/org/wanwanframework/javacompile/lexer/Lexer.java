@@ -15,23 +15,23 @@ public class Lexer {
 	private Hashtable<String, Word> words = new Hashtable<String, Word>();
 	private char peekCurrentChar = ' ';
 
-	private void reverse(Word word) {
-		words.put(word.lexeme, word);
+	private void add(Word word) {
+		words.put(word.value, word);
 	}
-
+	
 	public Lexer() {
-		reverse(new Word("if", Tag.IF));
-		reverse(new Word("else", Tag.ELSE));
-		reverse(new Word("while", Tag.WHILE));
-		reverse(new Word("do", Tag.DO));
-		reverse(new Word("break", Tag.BREAK));
+		add(new Word("if", Tag.IF));
+		add(new Word("else", Tag.ELSE));
+		add(new Word("while", Tag.WHILE));
+		add(new Word("do", Tag.DO));
+		add(new Word("break", Tag.BREAK));
 
-		reverse(Word.TRUE);
-		reverse(Word.FALSE);
-		reverse(Type.INT);
-		reverse(Type.CHAR);
-		reverse(Type.BOOL);
-		reverse(Type.FLOAT);
+		add(Word.TRUE);
+		add(Word.FALSE);
+		add(Type.INT);
+		add(Type.CHAR);
+		add(Type.BOOL);
+		add(Type.FLOAT);
 	}
 
 	public void readch() throws IOException {
