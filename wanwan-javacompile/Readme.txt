@@ -16,4 +16,4 @@ Readme
 
 3,test if
 	3.1{int i; i = 10; if(i < 20){i = 5;};}
-	3.2{int i; i = 10; if(i < 20){i = 5;};}
+	3.2{int i; i = 10; if(i < 20){i = 5;}else{i = 0;};}
