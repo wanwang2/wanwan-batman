@@ -1,0 +1,10 @@
+@auteland:
+	@auteland-describe;
+	
+@laiaus:
+	a big ice land;
+	
+@northArea:
+	north plain;
+	
+[-地理名词解释文件-]

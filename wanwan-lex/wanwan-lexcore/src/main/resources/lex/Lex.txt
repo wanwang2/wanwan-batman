@@ -1,0 +1,4 @@
+record:
+	@A & @B, $battle, #after800, @!describe
+	[-主格用@, 谓词用$, 宾语用#, 注释用@!]
+;
